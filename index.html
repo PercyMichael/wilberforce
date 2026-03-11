@@ -28,10 +28,50 @@
         }
       }
     </script>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <!-- Custom Styles for Cursor and Fonts -->
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body class="bg-bgPrimary text-textPrimary font-sans min-h-screen overflow-x-hidden antialiased cursor-none">
+    
+    <!-- Fixed Navigation & Signature Logo -->
+    <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-[5%] py-6 pointer-events-none">
+      <!-- Signature Logo: White block with "transparent" text punching out to the background -->
+      <a href="#" class="relative group pointer-events-auto hover-trigger block">
+        <div class="bg-white px-6 py-2 flex items-center justify-center mix-blend-screen transition-transform duration-500 group-hover:scale-105">
+          <span class="text-3xl md:text-5xl text-black" style="font-family: 'Great Vibes', cursive;">Wilberforce</span>
+        </div>
+      </a>
+      
+      <!-- Menu Button -->
+      <button id="menu-btn" class="text-white uppercase tracking-[3px] font-sans text-sm md:text-base hover-trigger group flex items-center gap-4 pointer-events-auto border border-white/20 rounded-full px-6 py-3 hover:bg-white hover:text-black transition-colors duration-300">
+        <span class="group-hover:text-black">Menu</span>
+      </button>
+    </nav>
+
+    <!-- Full Screen Menu Overlay -->
+    <div id="fs-menu" class="fixed inset-0 bg-bgPrimary z-40 flex flex-col justify-center px-[10%] pointer-events-none">
+      <!-- Decorator line -->
+      <div class="absolute left-[10%] top-0 w-px h-full bg-white/5"></div>
+      
+      <nav class="flex flex-col gap-4 md:gap-8 z-10 w-max">
+        <div class="overflow-hidden"><a href="#about" class="menu-link block font-serif text-5xl md:text-7xl lg:text-8xl text-textPrimary hover:text-accent transition-colors w-max hover-trigger uppercase tracking-tighter">About</a></div>
+        <div class="overflow-hidden"><a href="#credo" class="menu-link block font-serif text-5xl md:text-7xl lg:text-8xl text-textPrimary hover:text-accent transition-colors w-max hover-trigger uppercase tracking-tighter">Credo</a></div>
+        <div class="overflow-hidden"><a href="#property360" class="menu-link block font-serif text-5xl md:text-7xl lg:text-8xl text-textPrimary hover:text-accent transition-colors w-max hover-trigger uppercase tracking-tighter">Property 360</a></div>
+        <div class="overflow-hidden"><a href="#experience" class="menu-link block font-serif text-5xl md:text-7xl lg:text-8xl text-textPrimary hover:text-accent transition-colors w-max hover-trigger uppercase tracking-tighter">Experience</a></div>
+        <div class="overflow-hidden"><a href="#contact" class="menu-link block font-serif text-5xl md:text-7xl lg:text-8xl text-textPrimary hover:text-accent transition-colors w-max hover-trigger uppercase tracking-tighter">Contact</a></div>
+      </nav>
+      
+      <div class="absolute bottom-10 left-[10%] right-[10%] border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between text-textSecondary font-sans uppercase tracking-[2px] text-xs md:text-sm gap-4">
+        <a href="mailto:info@wilberforcensamba.com" class="hover:text-accent transition-colors hover-trigger">info@wilberforcensamba.com</a>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-accent transition-colors hover-trigger">LinkedIn</a>
+          <a href="#" class="hover:text-accent transition-colors hover-trigger">Twitter</a>
+          <a href="#" class="hover:text-accent transition-colors hover-trigger">Instagram</a>
+        </div>
+      </div>
+    </div>
+
     <!-- Custom Magnetic Cursor -->
     <div class="custom-cursor" id="custom-cursor"></div>
 
@@ -60,28 +100,37 @@
         </header>
 
         <!-- About / Qualifications Section -->
-        <section class="relative py-20 lg:py-32 px-[5%]">
-          <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div>
+        <section id="about" class="relative py-20 lg:py-32 px-[5%]">
+          <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+            <div class="md:sticky top-1/4">
               <h2 class="font-serif text-4xl md:text-6xl lg:text-7xl mb-4 text-accent hover-trigger">Global Expertise.</h2>
               <h2 class="font-serif text-4xl md:text-6xl lg:text-7xl hover-trigger">Local Precision.</h2>
             </div>
             <div>
               <p class="text-textSecondary text-lg md:text-xl max-w-prose mb-8">
-                Certified International Property Specialist, Accredited Buyer’s Representative, and a Certified Realtor by the National Association of Realtors in the USA.
+                Wilberforce Nsamba is an elite professional holding the highly coveted <span class="text-white">Certified International Property Specialist</span> designation alongside being an <span class="text-white">Accredited Buyer’s Representative</span>. He is proudly recognized as a Certified Realtor by the National Association of Realtors in the USA.
               </p>
-              <ul class="flex flex-col gap-4 font-sans text-textSecondary text-base md:text-lg">
-                <li class="flex items-center gap-3">
-                  <span class="text-accent">—</span> Specialist in Property Management
+              <ul class="flex flex-col gap-6 font-sans text-textSecondary text-base md:text-lg border-t border-white/10 pt-8">
+                <li class="flex items-start gap-4">
+                  <span class="text-accent text-2xl leading-none mt-1">01</span> 
+                  <div>
+                    <strong class="block text-white uppercase tracking-[1px] mb-1">Specialist in Property Management</strong>
+                    Mastering the art of maximizing asset value and tenant retention on a global scale.
+                  </div>
                 </li>
-                <li class="flex items-center gap-3">
-                  <span class="text-accent">—</span> Specialist Real Estate Instructor
+                <li class="flex items-start gap-4">
+                  <span class="text-accent text-2xl leading-none mt-1">02</span> 
+                  <div>
+                    <strong class="block text-white uppercase tracking-[1px] mb-1">Specialist Real Estate Instructor</strong>
+                    Educating and empowering the next generation of top-tier real estate professionals.
+                  </div>
                 </li>
-                <li class="flex items-center gap-3">
-                  <span class="text-accent">—</span> Certified Facilities Management Professional
-                </li>
-                <li class="flex items-center gap-3">
-                  <span class="text-accent">—</span> Masters Degree in Business Administration
+                <li class="flex items-start gap-4">
+                  <span class="text-accent text-2xl leading-none mt-1">03</span> 
+                  <div>
+                    <strong class="block text-white uppercase tracking-[1px] mb-1">Certified Facilities Management Professional</strong>
+                    Ensuring environmental harmony, safety, and operational efficiency across mega-structures.
+                  </div>
                 </li>
               </ul>
             </div>
@@ -92,21 +141,59 @@
         <section class="relative h-[80vh] w-full overflow-hidden">
           <div class="w-full h-full hover-trigger">
             <img src="./images/property_exterior_1773208283018.png" alt="Luxury Property Exterior" class="w-full h-full object-cover scale-[1.05] origin-center img-parallax">
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="absolute inset-x-0 bottom-20 z-10 px-[5%] max-w-[1600px] mx-auto hidden md:block">
+              <h2 class="font-serif text-5xl md:text-6xl text-white/90">Visionary Architecture<br/><span class="text-accent/80 italic">Curated by Wilberforce.</span></h2>
+            </div>
+          </div>
+        </section>
+
+        <!-- Credo Management Limited Section -->
+        <section id="credo" class="relative py-20 lg:py-32 px-[5%] bg-bgSecondary">
+          <div class="w-full max-w-[1600px] mx-auto flex flex-col md:flex-row justify-between items-center gap-16">
+            <div class="w-full md:w-1/2">
+               <p class="font-sans font-light uppercase tracking-[4px] text-accent mb-4 text-sm md:text-base">Chief Executive Officer</p>
+               <h2 class="font-serif text-5xl md:text-7xl lg:text-8xl mb-8 leading-[1]">Credo Management Limited.</h2>
+               <p class="text-textSecondary text-lg md:text-xl">
+                 As the core leadership engine, Wilberforce leverages his robust <span class="text-white">Masters Degree in Business Administration</span> to navigate complex real estate portfolios and drive Credo Management to unprecedented heights in the industry.
+               </p>
+            </div>
+            <div class="w-full md:w-1/2 border border-white/10 p-10 lg:p-16 relative bg-bgPrimary/50">
+              <div class="absolute -top-6 -left-6 text-6xl text-accent opacity-50 font-serif">"</div>
+              <h3 class="font-serif text-2xl md:text-4xl leading-[1.4] relative z-10 italic">
+                Leadership is not merely about guiding assets; it is about cultivating trust, delivering precision, and orchestrating environments where excellence thrives.
+              </h3>
+            </div>
+          </div>
+        </section>
+
+        <!-- Property 360 Section -->
+        <section id="property360" class="relative py-20 lg:py-40 px-[5%] border-b border-white/5">
+          <div class="w-full max-w-[1600px] mx-auto text-center">
+            <p class="font-sans font-light uppercase tracking-[4px] text-textSecondary mb-4 text-sm md:text-base hover-trigger">Executive Producer & Host</p>
+            <h2 class="font-serif text-[12vw] leading-none mb-12 hover-trigger text-white bg-clip-text">PROPERTY <span class="text-accent italic">360</span></h2>
+            <h3 class="font-serif text-3xl md:text-5xl lg:text-6xl leading-[1.3] max-w-4xl mx-auto hover-trigger">
+              A premier Multi-Media Show documenting the pinnacle of global real estate.
+            </h3>
+            <p class="mt-8 text-xl text-textSecondary max-w-2xl mx-auto">
+              Through Property 360, Wilberforce brings unparalleled insights, elite developments, and market intelligence to an exclusive audience worldwide.
+            </p>
           </div>
         </section>
 
         <!-- Experience & Board Section -->
-        <section class="relative py-20 lg:py-32 px-[5%] bg-bgSecondary">
+        <section id="experience" class="relative py-20 lg:py-32 px-[5%] bg-bgPrimary">
           <div class="w-full max-w-[1600px] mx-auto flex flex-col items-center text-center">
             <p class="font-sans font-light uppercase tracking-[2px] text-accent mb-8 text-sm md:text-base hover-trigger">Over a Decade of Excellence</p>
             <h3 class="font-serif text-3xl md:text-5xl lg:text-6xl leading-[1.3] max-w-5xl mb-16 hover-trigger">
               Delivering premium Real Estate Practice & Experience across Uganda, East Africa, the African continent, and Globally.
             </h3>
             
-            <div class="border-y border-white/10 py-8 w-full max-w-3xl mx-auto">
-              <p class="text-xl md:text-2xl text-textPrimary">
-                Board of Directors, <span class="text-accent">Africa Real Estate Practitioners Alliance (AREPA)</span>
-              </p>
+            <div class="border-y border-white/10 py-12 w-full max-w-4xl mx-auto flex flex-col items-center justify-center">
+              <p class="font-sans uppercase tracking-[3px] text-sm text-textSecondary mb-4">Board Member</p>
+              <h4 class="font-serif text-3xl md:text-5xl lg:text-5xl text-white">
+                Africa Real Estate Practitioners Alliance <span class="text-accent italic">(AREPA)</span>
+              </h4>
             </div>
           </div>
         </section>
@@ -122,7 +209,7 @@
         </section>
 
         <!-- Footer -->
-        <footer class="relative py-20 text-center px-[5%]">
+        <footer id="contact" class="relative py-20 text-center px-[5%]">
           <div class="w-full max-w-[1600px] mx-auto">
             <h2 class="font-serif text-5xl md:text-7xl lg:text-8xl">Get In Touch</h2>
             

@@ -101,4 +101,49 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+  // 5. Full Screen Menu Logic
+  const menuBtn = document.getElementById('menu-btn');
+  const fsMenu = document.getElementById('fs-menu');
+  const menuLinksWrapper = document.querySelectorAll('.menu-link');
+  let isMenuOpen = false;
+
+  // Set initial state of overlay (translate it up)
+  gsap.set(fsMenu, { yPercent: -100 });
+
+  const tlMenu = gsap.timeline({ paused: true });
+  
+  tlMenu.to(fsMenu, {
+    yPercent: 0,
+    duration: 0.8,
+    ease: "power4.inOut"
+  }).from(menuLinksWrapper, {
+    y: "100%",
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.1,
+    ease: "power4.out"
+  }, "-=0.4");
+
+  menuBtn.addEventListener('click', () => {
+    isMenuOpen = !isMenuOpen;
+    if (isMenuOpen) {
+      fsMenu.style.pointerEvents = "auto";
+      menuBtn.querySelector('span').textContent = "Close";
+      tlMenu.play();
+    } else {
+      fsMenu.style.pointerEvents = "none";
+      menuBtn.querySelector('span').textContent = "Menu";
+      tlMenu.reverse();
+    }
+  });
+
+  menuLinksWrapper.forEach(link => {
+    link.addEventListener('click', () => {
+      isMenuOpen = false;
+      fsMenu.style.pointerEvents = "none";
+      menuBtn.querySelector('span').textContent = "Menu";
+      tlMenu.reverse();
+    });
+  });
 });
