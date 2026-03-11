@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   tlHero.fromTo("#hero-img", 
     { scale: 1.1 },
     { scale: 1, duration: 2.5, ease: "power2.out" }
-  ).from("header h1, header p", {
+  ).from("#hero-content > *", {
     y: 30,
     opacity: 0,
     duration: 1.2,
