@@ -31,3 +31,8 @@ button,
   backdrop-filter: blur(2px);
   border: 1px solid #d4af37;
 }
+
+/* GSAP Helper */
+.clip-text {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}

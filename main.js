@@ -1,12 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Custom Magnetic Cursor
+  // Register GSAP Plugins
+  gsap.registerPlugin(ScrollTrigger);
+
+  // 1. Custom Magnetic Cursor Core
   const cursor = document.getElementById('custom-cursor');
   const hoverTriggers = document.querySelectorAll('a, button, .hover-trigger');
 
   document.addEventListener('mousemove', (e) => {
-    // Lerp could be used here for smoother delay, but basic assignment is fine for standard tracking
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
+    // QuickSet for high performance cursor tracking
+    gsap.quickSetter(cursor, "x", "px")(e.clientX);
+    gsap.quickSetter(cursor, "y", "px")(e.clientY);
   });
 
   hoverTriggers.forEach(trigger => {
@@ -18,64 +21,83 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 2. Simple Smooth Scroll & Parallax logic
-  // For a true Awwwards site we might use Lenis or Locomotive, but we will implement
-  // a lightweight vanilla intersection observer and scroll listener for parallax.
-  
-  const heroImg = document.getElementById('hero-img');
-  const parallaxImages = document.querySelectorAll('.img-parallax');
-  
-  window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    
-    // Hero Parallax
-    if (heroImg) {
-      // Move the image slightly down as we scroll down
-      heroImg.style.transform = `scale(1.05) translateY(${scrolled * 0.3}px)`;
-    }
+  // 2. GSAP Cinematic Hero Animation on Load
+  const tlHero = gsap.timeline();
+  tlHero.from("#hero-img", {
+    scale: 1.2,
+    duration: 2,
+    ease: "power3.out"
+  }).from("header h1, header p", {
+    y: 50,
+    opacity: 0,
+    duration: 1.2,
+    stagger: 0.2,
+    ease: "power2.out"
+  }, "-=1.5");
 
-    // Generic Parallax for other images
-    parallaxImages.forEach(img => {
-      if (img.id !== 'hero-img') {
-        const rect = img.parentElement.getBoundingClientRect();
-        // Check if in viewport
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          // Calculate progress of the element through the viewport (0 to 1)
-          const progress = 1 - (rect.bottom / (window.innerHeight + rect.height));
-          // Move from -10% to 10% based on scroll progress
-          const y = (progress - 0.5) * 20; 
-          img.style.transform = `scale(1.1) translateY(${y}%)`;
-        }
+  // 3. GSAP Parallax Images
+  const scrollParallaxImages = document.querySelectorAll('.img-parallax');
+  scrollParallaxImages.forEach(img => {
+    gsap.to(img, {
+      yPercent: 20,
+      ease: "none",
+      scrollTrigger: {
+        trigger: img.parentElement,
+        start: "top bottom", 
+        end: "bottom top",
+        scrub: true
       }
     });
   });
 
-  // 3. Intersection Observer for Text Reveals (Fade in / Slide up)
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.15
-  };
-
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        observer.unobserve(entry.target);
-      }
+  // 4. GSAP Text Reveal Animations (Awwwards Style Stagger)
+  const sections = document.querySelectorAll('section');
+  
+  sections.forEach(section => {
+    // Select headers and paragraphs
+    const textElements = section.querySelectorAll('h2, h3, p:not(.font-sans)');
+    
+    textElements.forEach(el => {
+      // Create a wrapper for the clipping mask effect often seen on Awwwards
+      const originalHTML = el.innerHTML;
+      el.innerHTML = `<span style="display: inline-block; transform: translateY(100%); opacity: 0;">${originalHTML}</span>`;
+      el.classList.add('clip-text');
+      
+      const innerSpan = el.querySelector('span');
+      
+      ScrollTrigger.create({
+        trigger: el,
+        start: "top 85%", 
+        onEnter: () => {
+          gsap.to(innerSpan, {
+            y: "0%",
+            opacity: 1,
+            duration: 1.2,
+            ease: "power4.out"
+          });
+        },
+        once: true
+      });
     });
-  }, observerOptions);
 
-  // Apply hidden states initialy to text elements we want to reveal
-  const revealElements = document.querySelectorAll('h2, h3, p, ul');
-  revealElements.forEach(el => {
-    // Skip if it's inside the hero to avoid FOUC delays on load
-    if (!el.closest('.hero')) {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(30px)';
-      el.style.transition = 'opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo)';
-      observer.observe(el);
+    // Stagger list items separately
+    const listItems = section.querySelectorAll('li');
+    if (listItems.length > 0) {
+      gsap.set(listItems, { x: -20, opacity: 0 });
+      ScrollTrigger.create({
+        trigger: listItems[0].parentElement,
+        start: "top 85%",
+        onEnter: () => {
+          gsap.to(listItems, {
+            x: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: "power3.out"
+          });
+        },
+        once: true
+      });
     }
   });
 });
