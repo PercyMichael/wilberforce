@@ -1,12 +1,37 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wilberforce Nsamba | Cinematic Portfolio</title>
+    <!-- Tailwind CSS (Play CDN for plain HTML usage) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bgPrimary: '#0a0a0a',
+              bgSecondary: '#141414',
+              textPrimary: '#f2f2f2',
+              textSecondary: '#a0a0a0',
+              accent: '#d4af37',
+            },
+            fontFamily: {
+              serif: ['"Playfair Display"', 'serif'],
+              sans: ['"Space Grotesk"', 'sans-serif'],
+            },
+            transitionTimingFunction: {
+              'out-expo': 'cubic-bezier(0.19, 1, 0.22, 1)',
+            }
+          }
+        }
+      }
+    </script>
+    <!-- Custom Styles for Cursor and Fonts -->
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
+  <body class="bg-bgPrimary text-textPrimary font-sans min-h-screen overflow-x-hidden antialiased cursor-none">
     <!-- Custom Magnetic Cursor -->
     <div class="custom-cursor" id="custom-cursor"></div>
 
@@ -14,44 +39,44 @@
       <div id="smooth-content">
         
         <!-- Hero Section -->
-        <header class="hero section" style="height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative;">
-          <div class="cinematic-img-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
-            <img src="./images/wilberforce_hero_1773208266400.png" alt="Wilberforce Nsamba" class="img-bg-fill" id="hero-img">
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, var(--color-bg-primary) 0%, transparent 100%);"></div>
+        <header class="relative flex items-center justify-center h-screen overflow-hidden">
+          <div class="absolute inset-0 z-0 overflow-hidden">
+            <img src="./images/wilberforce_hero_1773208266400.png" alt="Wilberforce Nsamba" class="w-full h-full object-cover scale-[1.05] origin-center img-parallax" id="hero-img">
+            <div class="absolute inset-0 bg-gradient-to-t from-bgPrimary to-transparent"></div>
           </div>
           
-          <div class="container" style="position: relative; z-index: 1; text-align: center;">
-            <p class="font-sans-heading" style="margin-bottom: var(--space-sm); color: var(--color-accent); letter-spacing: 4px;">Chief Executive Officer</p>
-            <h1 style="text-transform: uppercase;">Wilberforce Nsamba</h1>
-            <p style="margin: var(--space-md) auto 0; font-size: 1.2rem; max-width: 800px;">
+          <div class="relative z-10 text-center w-full max-w-[1600px] mx-auto px-[5%]">
+            <p class="font-sans font-light uppercase tracking-[4px] text-accent mb-4 text-sm md:text-base">Chief Executive Officer</p>
+            <h1 class="font-serif text-5xl md:text-8xl lg:text-[10rem] leading-[1.1] uppercase tracking-tighter">Wilberforce Nsamba</h1>
+            <p class="mt-8 mx-auto text-lg md:text-xl text-textSecondary max-w-3xl">
               Credo Management Limited | Executive Producer & Host - Property 360 Multi-Media Show
             </p>
           </div>
         </header>
 
         <!-- About / Qualifications Section -->
-        <section class="section about">
-          <div class="container grid-2">
+        <section class="relative py-20 lg:py-32 px-[5%]">
+          <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 class="text-accent hover-trigger">Global Expertise.</h2>
-              <h2 class="hover-trigger">Local Precision.</h2>
+              <h2 class="font-serif text-4xl md:text-6xl lg:text-7xl mb-4 text-accent hover-trigger">Global Expertise.</h2>
+              <h2 class="font-serif text-4xl md:text-6xl lg:text-7xl hover-trigger">Local Precision.</h2>
             </div>
             <div>
-              <p style="margin-bottom: var(--space-md);">
+              <p class="text-textSecondary text-lg md:text-xl max-w-prose mb-8">
                 Certified International Property Specialist, Accredited Buyer’s Representative, and a Certified Realtor by the National Association of Realtors in the USA.
               </p>
-              <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-sm); font-family: var(--font-sans); color: var(--color-text-secondary);">
-                <li style="display: flex; align-items: center; gap: 10px;">
-                  <span style="color: var(--color-accent);">—</span> Specialist in Property Management
+              <ul class="flex flex-col gap-4 font-sans text-textSecondary text-base md:text-lg">
+                <li class="flex items-center gap-3">
+                  <span class="text-accent">—</span> Specialist in Property Management
                 </li>
-                <li style="display: flex; align-items: center; gap: 10px;">
-                  <span style="color: var(--color-accent);">—</span> Specialist Real Estate Instructor
+                <li class="flex items-center gap-3">
+                  <span class="text-accent">—</span> Specialist Real Estate Instructor
                 </li>
-                <li style="display: flex; align-items: center; gap: 10px;">
-                  <span style="color: var(--color-accent);">—</span> Certified Facilities Management Professional
+                <li class="flex items-center gap-3">
+                  <span class="text-accent">—</span> Certified Facilities Management Professional
                 </li>
-                <li style="display: flex; align-items: center; gap: 10px;">
-                  <span style="color: var(--color-accent);">—</span> Masters Degree in Business Administration
+                <li class="flex items-center gap-3">
+                  <span class="text-accent">—</span> Masters Degree in Business Administration
                 </li>
               </ul>
             </div>
@@ -59,22 +84,22 @@
         </section>
 
         <!-- Cinematic Break / Exterior -->
-        <section class="section" style="height: 80vh; padding: 0;">
-          <div class="cinematic-img-container hover-trigger">
-            <img src="./images/property_exterior_1773208283018.png" alt="Luxury Property Exterior" class="img-bg-fill" id="break-img-1">
+        <section class="relative h-[80vh] w-full overflow-hidden">
+          <div class="w-full h-full hover-trigger">
+            <img src="./images/property_exterior_1773208283018.png" alt="Luxury Property Exterior" class="w-full h-full object-cover scale-[1.05] origin-center img-parallax">
           </div>
         </section>
 
         <!-- Experience & Board Section -->
-        <section class="section experience" style="background-color: var(--color-bg-secondary);">
-          <div class="container text-center" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
-            <p class="font-sans-heading text-accent hover-trigger" style="margin-bottom: var(--space-md);">Over a Decade of Excellence</p>
-            <h3 class="hover-trigger" style="max-width: 1000px; margin: 0 auto var(--space-lg); line-height: 1.4;">
+        <section class="relative py-20 lg:py-32 px-[5%] bg-bgSecondary">
+          <div class="w-full max-w-[1600px] mx-auto flex flex-col items-center text-center">
+            <p class="font-sans font-light uppercase tracking-[2px] text-accent mb-8 text-sm md:text-base hover-trigger">Over a Decade of Excellence</p>
+            <h3 class="font-serif text-3xl md:text-5xl lg:text-6xl leading-[1.3] max-w-5xl mb-16 hover-trigger">
               Delivering premium Real Estate Practice & Experience across Uganda, East Africa, the African continent, and Globally.
             </h3>
             
-            <div style="border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); padding: var(--space-md) 0; width: 100%; max-width: 800px; margin: 0 auto;">
-              <p style="font-size: 1.2rem; color: var(--color-text-primary);">
+            <div class="border-y border-white/10 py-8 w-full max-w-3xl mx-auto">
+              <p class="text-xl md:text-2xl text-textPrimary">
                 Board of Directors, <span class="text-accent">Africa Real Estate Practitioners Alliance (AREPA)</span>
               </p>
             </div>
@@ -82,24 +107,26 @@
         </section>
 
         <!-- Cinematic Break / Interior -->
-        <section class="section" style="height: 100vh; padding: 0;">
-          <div class="cinematic-img-container hover-trigger">
-            <img src="./images/property_interior_1773208300040.png" alt="Luxury Property Interior" class="img-bg-fill" id="break-img-2">
-            <div style="position: absolute; bottom: var(--space-xl); left: 5%; z-index: 1;">
-              <h2 style="margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.8);">Elevating Standard.</h2>
+        <section class="relative h-screen w-full overflow-hidden">
+          <div class="w-full h-full hover-trigger">
+            <img src="./images/property_interior_1773208300040.png" alt="Luxury Property Interior" class="w-full h-full object-cover scale-[1.05] origin-center img-parallax">
+            <div class="absolute bottom-32 left-[5%] z-10">
+              <h2 class="font-serif text-5xl md:text-7xl lg:text-8xl drop-shadow-[2px_2px_10px_rgba(0,0,0,0.8)]">Elevating Standard.</h2>
             </div>
           </div>
         </section>
 
         <!-- Footer -->
-        <footer class="section" style="padding-bottom: var(--space-md); text-align: center;">
-          <div class="container">
-            <h2 style="font-size: clamp(2rem, 4vw, 5rem);">Get In Touch</h2>
-            <a href="#" class="text-accent hover-trigger" style="font-size: 1.5rem; font-family: var(--font-serif); border-bottom: 1px solid var(--color-accent); padding-bottom: 5px; margin-top: var(--space-md); display: inline-block;">Connect with Wilberforce</a>
+        <footer class="relative py-20 text-center px-[5%]">
+          <div class="w-full max-w-[1600px] mx-auto">
+            <h2 class="font-serif text-5xl md:text-7xl lg:text-8xl">Get In Touch</h2>
+            <a href="#" class="inline-block mt-8 pb-1 text-2xl md:text-3xl font-serif text-accent border-b border-accent hover-trigger decoration-transparent transition-colors hover:text-white hover:border-white">
+              Connect with Wilberforce
+            </a>
             
-            <div style="margin-top: var(--space-xl); display: flex; justify-content: space-between; align-items: center; color: var(--color-text-secondary); font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: var(--space-md);">
+            <div class="mt-32 flex flex-col md:flex-row justify-between items-center text-textSecondary text-sm border-t border-white/10 pt-8">
               <span>&copy; 2026 Wilberforce Nsamba.</span>
-              <span>Design by Credo Management Limited.</span>
+              <span class="mt-4 md:mt-0">Design by Credo Management Limited.</span>
             </div>
           </div>
         </footer>

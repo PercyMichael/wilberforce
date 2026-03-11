@@ -1,158 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=Space+Grotesk:wght@300;400;600&display=swap');
 
-:root {
-  /* Colors - Cinematic Dark Theme */
-  --color-bg-primary: #0a0a0a;
-  --color-bg-secondary: #141414;
-  --color-text-primary: #f2f2f2;
-  --color-text-secondary: #a0a0a0;
-  --color-accent: #d4af37;
-  /* Elegant Gold */
-
-  /* Typography */
-  --font-serif: 'Playfair Display', serif;
-  --font-sans: 'Space Grotesk', sans-serif;
-
-  /* Spacing & Layout */
-  --space-sm: 1rem;
-  --space-md: 2rem;
-  --space-lg: 4rem;
-  --space-xl: 8rem;
-  --section-padding: 8rem 5%;
-
-  /* Easing */
-  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 16px;
-  background-color: var(--color-bg-primary);
-  color: var(--color-text-primary);
-  overflow-x: hidden;
-}
-
-body {
-  font-family: var(--font-sans);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--color-bg-primary);
-  min-height: 100vh;
-  /* Hide cursor for custom magnetic cursor */
-  cursor: none;
-}
-
-/* Typography Hierarchy */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  line-height: 1.1;
-  color: var(--color-text-primary);
-}
-
-h1 {
-  font-size: clamp(4rem, 8vw, 10rem);
-  letter-spacing: -2px;
-}
-
-h2 {
-  font-size: clamp(3rem, 5vw, 6rem);
-  margin-bottom: var(--space-md);
-}
-
-h3 {
-  font-size: clamp(2rem, 3vw, 4rem);
-}
-
-p {
-  font-size: clamp(1rem, 1.2vw, 1.5rem);
-  color: var(--color-text-secondary);
-  max-width: 60ch;
-}
-
-/* Utilities */
-.text-accent {
-  color: var(--color-accent);
-}
-
-.font-sans-heading {
-  font-family: var(--font-sans);
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 1rem;
-  color: var(--color-text-secondary);
-}
-
-/* Layout Utilities */
-.container {
-  width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 0 5%;
-}
-
-.section {
-  padding: var(--section-padding);
-  position: relative;
-}
-
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
-  align-items: center;
-}
-
-@media (max-width: 768px) {
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Standard HTML elements that should have cursor logic */
+/* Basic setup to support the custom cursor */
 a,
-button {
-  cursor: none;
-  font-family: var(--font-sans);
-  text-decoration: none;
-  color: inherit;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: var(--color-accent);
-}
-
-/* Cinematic Images */
-.cinematic-img-container {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.img-bg-fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.05);
-  /* Prepare for parallax/reveal */
-  transform-origin: center;
+button,
+.hover-trigger {
+  cursor: none !important;
 }
 
 /* Custom Cursor */
@@ -163,7 +15,8 @@ a:hover {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: var(--color-accent);
+  background-color: #d4af37;
+  /* var(--color-accent) */
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
@@ -176,5 +29,5 @@ a:hover {
   height: 60px;
   background-color: rgba(212, 175, 55, 0.4);
   backdrop-filter: blur(2px);
-  border: 1px solid var(--color-accent);
+  border: 1px solid #d4af37;
 }

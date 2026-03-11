@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // a lightweight vanilla intersection observer and scroll listener for parallax.
   
   const heroImg = document.getElementById('hero-img');
-  const parallaxImages = document.querySelectorAll('.img-bg-fill');
+  const parallaxImages = document.querySelectorAll('.img-parallax');
   
   window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
