@@ -34,7 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
     duration: 1.2,
     stagger: 0.15,
     ease: "power2.out"
-  }, "-=1.8");
+  }, "-=1.8"
+  ).from("#hero-person", {
+    y: 50,
+    opacity: 0,
+    duration: 1.5,
+    ease: "power3.out"
+  }, "-=1.0");
 
   // 3. GSAP Parallax Images
   const scrollParallaxImages = document.querySelectorAll('.img-parallax');
