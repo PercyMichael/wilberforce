@@ -1,5 +1,3 @@
-import './style.css'
-
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Custom Magnetic Cursor
   const cursor = document.getElementById('custom-cursor');
