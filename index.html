@@ -39,10 +39,10 @@
       <div id="smooth-content">
         
         <!-- Hero Section -->
-        <header class="relative flex items-center justify-start h-screen overflow-hidden">
-          <div class="absolute inset-0 z-0 overflow-hidden">
-            <!-- Ensure object-position favors the right side of the image where the face is -->
-            <img src="./images/wilberforce_hero_cinematic.png" alt="Wilberforce Nsamba" class="w-full h-full object-cover object-right lg:object-center scale-[1.05] origin-center img-parallax" id="hero-img">
+        <header class="relative w-full h-screen overflow-hidden flex items-center justify-start">
+          <div class="absolute inset-0 z-0">
+            <!-- Set absolute w-full h-full and object cover to guarantee no gaps -->
+            <img src="./images/wilberforce_hero_cinematic.png" alt="Wilberforce Nsamba" class="absolute top-0 left-0 w-full h-full object-cover object-right lg:object-center img-parallax" id="hero-img">
             <!-- Left-to-right gradient to cover text area without darkening the face on the right -->
             <div class="absolute inset-0 bg-gradient-to-r from-bgPrimary via-bgSecondary/80 to-transparent w-full md:w-3/4"></div>
             <!-- Grounding gradient from the bottom -->

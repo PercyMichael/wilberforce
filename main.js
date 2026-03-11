@@ -23,17 +23,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. GSAP Cinematic Hero Animation on Load
   const tlHero = gsap.timeline();
-  tlHero.from("#hero-img", {
-    scale: 1.2,
-    duration: 2,
-    ease: "power3.out"
-  }).from("header h1, header p", {
-    y: 50,
+  // Ensure the image covers the area completely. Instead of a `from` that ends at scale 1,
+  // we use a slow scale down from 1.1 to 1 to ensure no black borders at the start.
+  tlHero.fromTo("#hero-img", 
+    { scale: 1.1 },
+    { scale: 1, duration: 2.5, ease: "power2.out" }
+  ).from("header h1, header p", {
+    y: 30,
     opacity: 0,
     duration: 1.2,
-    stagger: 0.2,
+    stagger: 0.15,
     ease: "power2.out"
-  }, "-=1.5");
+  }, "-=1.8");
 
   // 3. GSAP Parallax Images
   const scrollParallaxImages = document.querySelectorAll('.img-parallax');
