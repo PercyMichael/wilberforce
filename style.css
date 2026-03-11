@@ -44,3 +44,11 @@ button,
 .clip-text {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
+
+#preloader {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+#app-content {
+  opacity: 0;
+}

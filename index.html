@@ -35,6 +35,21 @@
   </head>
   <body class="bg-bgPrimary text-textPrimary font-sans min-h-screen overflow-x-hidden antialiased cursor-none">
     
+    <!-- Cinematic Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[100] bg-bgPrimary flex flex-col items-center justify-center pointer-events-auto">
+      <div class="relative overflow-hidden mb-8">
+        <img src="./images/logo.png" alt="Wilberforce Nsamba" class="h-20 md:h-28 w-auto object-contain opacity-0 scale-90" id="preloader-logo" />
+      </div>
+      <div class="w-48 h-[1px] bg-white/10 relative overflow-hidden">
+        <div id="preloader-bar" class="absolute top-0 left-0 h-full bg-accent w-0"></div>
+      </div>
+      <div class="mt-4 font-sans text-[10px] uppercase tracking-[4px] text-accent/60 flex items-center gap-2">
+        <span>Loading</span>
+        <span id="preloader-percent">0</span><span>%</span>
+      </div>
+    </div>
+
+    <div id="app-content" class="opacity-0">
     <!-- Fixed Navigation & Signature Logo -->
     <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-[5%] py-4 md:py-6 pointer-events-auto bg-bgPrimary border-b border-white/10">
       <!-- Custom Logo -->
@@ -306,5 +321,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="./main.js"></script>
+    </div><!-- End app-content -->
   </body>
 </html>

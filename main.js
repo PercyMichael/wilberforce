@@ -21,20 +21,65 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 2. GSAP Cinematic Hero Animation on Load
-  const tlHero = gsap.timeline();
-  // Ensure the image covers the area completely. Instead of a `from` that ends at scale 1,
-  // we use a slow scale down from 1.1 to 1 to ensure no black borders at the start.
-  tlHero.fromTo("#hero-img", 
-    { scale: 1.1 },
-    { scale: 1, duration: 2.5, ease: "power2.out" }
-  ).from("#hero-content > *", {
-    y: 30,
-    opacity: 0,
-    duration: 1.2,
-    stagger: 0.15,
+  // 2. Cinematic Preloader Logic
+  const preloader = document.getElementById('preloader');
+  const preloaderLogo = document.getElementById('preloader-logo');
+  const preloaderBar = document.getElementById('preloader-bar');
+  const preloaderPercent = document.getElementById('preloader-percent');
+  const appContent = document.getElementById('app-content');
+
+  const tlPreloader = gsap.timeline({
+    onComplete: () => {
+      preloader.style.display = 'none';
+    }
+  });
+
+  // Incremental percent counter logic
+  const counterObj = { value: 0 };
+  
+  tlPreloader.to(preloaderLogo, {
+    opacity: 1,
+    scale: 1,
+    duration: 1.5,
     ease: "power2.out"
-  }, "-=1.8");
+  }).to(counterObj, {
+    value: 100,
+    duration: 3,
+    ease: "power1.inOut",
+    onUpdate: () => {
+      const progress = Math.round(counterObj.value);
+      preloaderPercent.innerText = progress;
+      preloaderBar.style.width = progress + '%';
+    }
+  }, "-=0.5")
+  .to(preloader, {
+    clipPath: "polygon(0 0, 100% 0, 100% 0%, 0% 0%)",
+    duration: 1.2,
+    ease: "power4.inOut"
+  })
+  .to(appContent, {
+    opacity: 1,
+    duration: 0.8,
+    ease: "power2.out",
+    onStart: () => {
+      startHeroAnimation();
+    }
+  }, "-=0.8");
+
+  // 3. GSAP Cinematic Hero Animation
+  function startHeroAnimation() {
+    const tlHero = gsap.timeline();
+    tlHero.fromTo("#hero-img", 
+      { scale: 1.1 },
+      { scale: 1, duration: 2.5, ease: "power2.out" }
+    ).from("#hero-content > *", {
+      y: 30,
+      opacity: 0,
+      duration: 1.2,
+      stagger: 0.15,
+      ease: "power2.out"
+    }, "-=1.8");
+  }
 
   // 3. GSAP Parallax Images
   const scrollParallaxImages = document.querySelectorAll('.img-parallax');
