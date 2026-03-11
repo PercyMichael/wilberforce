@@ -35,16 +35,23 @@
   <body class="bg-bgPrimary text-textPrimary font-sans min-h-screen overflow-x-hidden antialiased cursor-none">
     
     <!-- Fixed Navigation & Signature Logo -->
-    <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-[5%] py-6 pointer-events-none">
-      <!-- Signature Logo: White block with "transparent" text punching out to the background -->
-      <a href="#" class="relative group pointer-events-auto hover-trigger block">
-        <div class="bg-white px-6 py-2 flex items-center justify-center mix-blend-screen transition-transform duration-500 group-hover:scale-105">
-          <span class="text-3xl md:text-5xl text-black" style="font-family: 'Great Vibes', cursive;">Wilberforce</span>
-        </div>
+    <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-[5%] py-4 md:py-6 pointer-events-auto bg-black border-b border-white/10">
+      <!-- Signature Logo: White text on transparent -->
+      <a href="#" class="relative group hover-trigger block">
+        <span class="text-3xl md:text-4xl text-white transition-colors duration-300 group-hover:text-accent" style="font-family: 'Great Vibes', cursive;">Wilberforce</span>
       </a>
       
-      <!-- Menu Button -->
-      <button id="menu-btn" class="text-white uppercase tracking-[3px] font-sans text-sm md:text-base hover-trigger group flex items-center gap-4 pointer-events-auto border border-white/20 rounded-full px-6 py-3 hover:bg-white hover:text-black transition-colors duration-300">
+      <!-- Desktop Menu Links -->
+      <div class="hidden md:flex items-center gap-8 font-sans uppercase tracking-[2px] text-xs font-semibold">
+        <a href="#about" class="text-textSecondary hover:text-white transition-colors hover-trigger menu-link-desktop">About</a>
+        <a href="#credo" class="text-textSecondary hover:text-white transition-colors hover-trigger menu-link-desktop">Credo</a>
+        <a href="#property360" class="text-textSecondary hover:text-white transition-colors hover-trigger menu-link-desktop">Property 360</a>
+        <a href="#experience" class="text-textSecondary hover:text-white transition-colors hover-trigger menu-link-desktop">Experience</a>
+        <a href="#contact" class="text-textSecondary hover:text-white transition-colors hover-trigger menu-link-desktop">Contact</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden text-white uppercase tracking-[3px] font-sans text-xs hover-trigger group flex items-center gap-3 border border-white/20 rounded-full px-5 py-2.5 hover:bg-white hover:text-black transition-colors duration-300">
         <span class="group-hover:text-black">Menu</span>
       </button>
     </nav>
