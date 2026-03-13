@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Wilberforce Nsamba - Global Real Estate Visionary. CEO of Credo Management Limited, Executive Producer & Host of the Property 360 Multi-Media Show, and Certified International Property Specialist (CIPS)." />
+    <meta name="description" content="I am Wilberforce Nsamba - Global Real Estate Visionary. CEO of Credo Management Limited, Executive Producer & Host of the Property 360 Multi-Media Show, and Certified International Property Specialist (CIPS)." />
     <title>Wilberforce Nsamba | Global Real Estate Visionary & CEO</title>
     <!-- Tailwind CSS (Play CDN for plain HTML usage) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -33,12 +33,12 @@
     <!-- Custom Styles for Cursor and Fonts -->
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body class="bg-bgPrimary text-textPrimary font-sans min-h-screen overflow-x-hidden antialiased cursor-none">
+  <body class="bg-bgPrimary text-textPrimary font-sans min-h-screen overflow-x-hidden antialiased md:cursor-none">
     
     <!-- Cinematic Preloader -->
     <div id="preloader" class="fixed inset-0 z-[100] bg-bgPrimary flex flex-col items-center justify-center pointer-events-auto">
       <div class="relative overflow-hidden mb-8">
-        <img src="./images/logo.png" alt="Wilberforce Nsamba" class="h-20 md:h-28 w-auto object-contain opacity-0 scale-90" id="preloader-logo" />
+        <img src="./images/branding/logo.png" alt="Wilberforce Nsamba" class="h-20 md:h-28 w-auto object-contain opacity-0 scale-90" id="preloader-logo" />
       </div>
       <div class="w-48 h-[1px] bg-white/10 relative overflow-hidden">
         <div id="preloader-bar" class="absolute top-0 left-0 h-full bg-accent w-0"></div>
@@ -54,7 +54,7 @@
     <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-[5%] py-4 md:py-6 pointer-events-auto bg-bgPrimary border-b border-white/10">
       <!-- Custom Logo -->
       <a href="#" class="relative group hover-trigger block">
-        <img src="./images/logo.png" alt="Wilberforce Nsamba Logo" class="h-14 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+              <img src="./images/branding/logo.png" alt="Wilberforce Nsamba Logo" class="h-14 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
       </a>
       
       <div class="flex items-center gap-6 md:gap-8">
@@ -117,38 +117,73 @@
       <div id="smooth-content">
         
         <!-- Hero Section -->
-        <header class="relative w-full h-screen overflow-hidden flex items-center justify-start">
+        <header class="relative w-full min-h-screen lg:h-screen flex items-center pt-24 lg:pt-0">
+          <!-- Background Elements -->
           <div class="absolute inset-0 z-0">
-            <!-- Set absolute w-full h-full and object cover to guarantee no gaps -->
-            <img src="./images/wilberforce_hero_cinematic.png" alt="Wilberforce Nsamba" class="absolute top-0 left-0 w-full h-full object-cover object-right lg:object-center img-parallax" id="hero-img">
-            <!-- Left-to-right gradient to cover text area without darkening the face on the right -->
-            <div class="absolute inset-0 bg-gradient-to-r from-bgPrimary via-bgSecondary/80 to-transparent w-full md:w-3/4"></div>
-            <!-- Grounding gradient from the bottom -->
-            <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-bgPrimary to-transparent"></div>
+            <!-- New Generated Background (No people) -->
+            <img src="./images/hero/luxury_hero_bg.png" alt="" id="hero-img" class="absolute inset-0 w-full h-full object-cover opacity-60">
+            
+            <!-- Dark Vignette and Gradient -->
+            <div class="absolute inset-0 bg-gradient-to-r from-bgPrimary via-bgPrimary/60 to-transparent"></div>
+            <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-bgPrimary to-transparent"></div>
           </div>
           
-          <div class="relative z-10 w-full max-w-[1600px] mx-auto px-[5%] mt-12 md:mt-20">
-            <div class="max-w-3xl flex flex-col items-start" id="hero-content">
+          <div class="relative z-10 w-full max-w-[1600px] mx-auto px-[5%] grid grid-cols-1 lg:grid-cols-2 gap-12 items-center h-full">
+            <!-- Left Column: Text content (Order 2 on mobile) -->
+            <div class="flex flex-col items-center lg:items-start text-center lg:text-left pb-20 lg:pb-0 lg:pt-0 order-2 lg:order-1 relative z-30 -mt-40 sm:-mt-48 lg:mt-0" id="hero-content">
               <!-- Refined Hero Heading -->
-              <h1 class="font-sans font-bold text-[3.5rem] md:text-6xl lg:text-[5rem] leading-[0.95] uppercase tracking-tighter mb-8 max-w-5xl">
+              <h1 class="font-sans font-bold text-[3rem] md:text-5xl lg:text-[5rem] leading-[0.95] uppercase tracking-tighter mb-8 max-w-5xl">
                 <span class="text-white">Global Real Estate</span><br/>
                 <span class="text-accent">Visionary</span>
               </h1>
               
               <!-- Refined Description -->
-              <p class="text-base md:text-2xl text-textSecondary border-l border-accent pl-5 md:pl-6 max-w-2xl font-light leading-relaxed mb-10 md:mb-12">
+              <p class="text-base md:text-xl text-textSecondary border-accent lg:border-l lg:pl-6 max-w-2xl font-light leading-relaxed mb-8 md:mb-10">
                 Chief Executive Officer of <span class="text-white font-medium pl-1">Credo Management Limited</span> <br class="hidden md:block" />& Executive Producer of <span class="text-white font-medium pl-1">Property 360</span>.
               </p>
 
               <!-- Call to Action Buttons -->
-              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 w-full sm:w-auto relative z-20">
-                 <a href="#about" class="px-8 py-4 bg-accent text-black font-sans uppercase tracking-[2px] text-xs font-bold hover:bg-white transition-colors duration-300 hover-trigger text-center">
-                   Discover His Vision
+              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 w-full sm:w-auto relative z-20 mb-10">
+                 <a href="#about" class="hidden sm:inline-block px-8 py-4 bg-accent text-black font-sans uppercase tracking-[2px] text-xs font-bold hover:bg-white transition-colors duration-300 hover-trigger text-center">
+                   Discover My Vision
                  </a>
-                 <a href="#contact" class="px-8 py-4 border border-white/30 text-white font-sans uppercase tracking-[2px] text-xs font-bold hover:bg-white hover:text-black transition-colors duration-300 hover-trigger text-center">
-                   Get In Touch
+                 <a href="./book.html" class="px-8 py-4 border border-white/30 text-white font-sans uppercase tracking-[2px] text-xs font-bold hover:bg-white hover:text-black transition-colors duration-300 hover-trigger text-center">
+                   Book Now
                  </a>
+              </div>
+
+              <!-- Professional Designations Badges -->
+              <div class="w-full overflow-hidden mt-4 lg:mt-0">
+                <div class="flex flex-nowrap lg:flex-wrap gap-4 md:gap-3 whitespace-nowrap" id="hero-badges">
+                  <!-- Original Set -->
+                  <div class="flex gap-4 md:gap-3 flex-shrink-0" id="badges-track">
+                    <div class="badge-item"><span class="badge-abbr">CIPS</span></div>
+                    <div class="badge-item"><span class="badge-abbr">SPM</span></div>
+                    <div class="badge-item"><span class="badge-abbr">FMP</span></div>
+                    <div class="badge-item"><span class="badge-abbr">REALTOR</span></div>
+                    <div class="badge-item"><span class="badge-abbr">SRI</span></div>
+                    <div class="badge-item"><span class="badge-abbr">ABR</span></div>
+                  </div>
+                  <!-- Duplicate Set for looping on mobile (hidden on desktop via css or js logic) -->
+                  <div class="flex lg:hidden gap-4 md:gap-3 flex-shrink-0" id="badges-track-duplicate">
+                    <div class="badge-item"><span class="badge-abbr">CIPS</span></div>
+                    <div class="badge-item"><span class="badge-abbr">SPM</span></div>
+                    <div class="badge-item"><span class="badge-abbr">FMP</span></div>
+                    <div class="badge-item"><span class="badge-abbr">REALTOR</span></div>
+                    <div class="badge-item"><span class="badge-abbr">SRI</span></div>
+                    <div class="badge-item"><span class="badge-abbr">ABR</span></div>
+                  </div>
+                </div>
+              </div>
             </div>
+
+            <!-- Right Column: Image of Wilber (Pinned to Bottom, Order 1 on mobile) -->
+            <div class="relative h-full flex items-end justify-center lg:justify-end order-1 lg:order-2">
+              <div class="relative w-full max-w-[500px] lg:max-w-[700px] flex items-end h-full">
+                <img src="./images/portraits/wilber-69b3fb2de0b86.webp" alt="Wilberforce Nsamba" class="relative z-10 w-full h-auto max-h-[70vh] lg:max-h-[90vh] object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform transition-transform duration-700" id="hero-portrait">
+              </div>
+            </div>
+          </div>
         </header>
 
         <!-- About / Qualifications Section -->
@@ -159,11 +194,32 @@
               <h2 class="font-sans text-4xl md:text-6xl lg:text-7xl hover-trigger">Local Precision.</h2>
             </div>
             <div>
-              <p class="text-textSecondary text-lg md:text-xl max-w-prose mb-6">
-                Wilberforce Nsamba is an elite professional holding the highly coveted <span class="text-white">Certified International Property Specialist</span> designation alongside being an <span class="text-white">Accredited Buyer’s Representative</span>. He is proudly recognized as a Certified Realtor by the National Association of Realtors in the USA.
+              <p class="text-textSecondary text-lg md:text-xl max-w-prose mb-6 leading-relaxed">
+                I am an elite professional holding a <span class="text-white font-medium">Masters in Business Administration (MBA)</span> and the highly coveted <span class="text-white font-medium">Certified International Property Specialist (CIPS)</span> designation. 
               </p>
-              <p class="text-textSecondary text-lg md:text-xl max-w-prose">
-                Beyond his visionary leadership and global real estate achievements, Wilberforce is a dedicated family man and is happily married.
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                <div class="flex items-center gap-3">
+                  <div class="w-1.5 h-1.5 bg-accent rounded-full"></div>
+                  <span class="text-xs uppercase tracking-widest text-white/80">Accredited Buyer’s Rep (ABR)</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-1.5 h-1.5 bg-accent rounded-full"></div>
+                  <span class="text-xs uppercase tracking-widest text-white/80">Specialist RE Instructor (SRI)</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-1.5 h-1.5 bg-accent rounded-full"></div>
+                  <span class="text-xs uppercase tracking-widest text-white/80">Specialist Property Manager</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-1.5 h-1.5 bg-accent rounded-full"></div>
+                  <span class="text-xs uppercase tracking-widest text-white/80">Certified REALTOR®</span>
+                </div>
+              </div>
+              <p class="text-textSecondary text-lg md:text-xl max-w-prose mb-6">
+                I am proudly recognized as a Certified Realtor by the National Association of Realtors in the USA, bringing a global standard of excellence to every transaction.
+              </p>
+              <p class="text-textSecondary text-lg md:text-xl max-w-prose italic border-l-2 border-accent/30 pl-6">
+                Beyond my visionary leadership, I am a dedicated family man, balancing my high-stakes career with a commitment to my personal values.
               </p>
             </div>
           </div>
@@ -171,10 +227,20 @@
 
         <!-- Dynamic Expertise Grid -->
         <section class="relative py-20 lg:pb-40 px-[5%]">
-          <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
             <!-- Expertise 01 -->
-            <div class="group p-8 md:p-10 border border-white/5 bg-bgSecondary/30 hover:bg-bgSecondary/60 transition-all duration-500 border-t-accent/20">
+            <div class="group p-8 md:p-10 border border-white/5 bg-bgSecondary/30 hover:bg-bgSecondary/60 transition-colors duration-500 border-t-accent/20 hover-trigger">
               <span class="block text-accent text-5xl font-sans font-light mb-8 opacity-50 group-hover:opacity-100 transition-opacity">01</span>
+              <h3 class="text-2xl md:text-3xl text-white font-sans font-bold mb-4 leading-tight">Certified International Property Specialist</h3>
+              <div class="h-[1px] w-12 bg-accent/30 mb-6 group-hover:w-full transition-all duration-700"></div>
+              <p class="text-textSecondary text-lg leading-relaxed">
+                Navigating complex cross-border transactions with elite global market intelligence.
+              </p>
+            </div>
+
+            <!-- Expertise 02 -->
+            <div class="group p-8 md:p-10 border border-white/5 bg-bgSecondary/30 hover:bg-bgSecondary/60 transition-colors duration-500 border-t-accent/20 hover-trigger">
+              <span class="block text-accent text-5xl font-sans font-light mb-8 opacity-50 group-hover:opacity-100 transition-opacity">02</span>
               <h3 class="text-2xl md:text-3xl text-white font-sans font-bold mb-4 leading-tight">Specialist in Property Management</h3>
               <div class="h-[1px] w-12 bg-accent/30 mb-6 group-hover:w-full transition-all duration-700"></div>
               <p class="text-textSecondary text-lg leading-relaxed">
@@ -182,9 +248,29 @@
               </p>
             </div>
 
-            <!-- Expertise 02 -->
-            <div class="group p-8 md:p-10 border border-white/5 bg-bgSecondary/30 hover:bg-bgSecondary/60 transition-all duration-500 border-t-accent/20">
-              <span class="block text-accent text-5xl font-sans font-light mb-8 opacity-50 group-hover:opacity-100 transition-opacity">02</span>
+            <!-- Expertise 03 -->
+            <div class="group p-8 md:p-10 border border-white/5 bg-bgSecondary/30 hover:bg-bgSecondary/60 transition-colors duration-500 border-t-accent/20 hover-trigger">
+              <span class="block text-accent text-5xl font-sans font-light mb-8 opacity-50 group-hover:opacity-100 transition-opacity">03</span>
+              <h3 class="text-2xl md:text-3xl text-white font-sans font-bold mb-4 leading-tight">Certified Facilities Management Professional</h3>
+              <div class="h-[1px] w-12 bg-accent/30 mb-6 group-hover:w-full transition-all duration-700"></div>
+              <p class="text-textSecondary text-lg leading-relaxed">
+                Ensuring environmental harmony, safety, and operational efficiency across mega-structures.
+              </p>
+            </div>
+
+            <!-- Expertise 04 -->
+            <div class="group p-8 md:p-10 border border-white/5 bg-bgSecondary/30 hover:bg-bgSecondary/60 transition-colors duration-500 border-t-accent/20 hover-trigger">
+              <span class="block text-accent text-5xl font-sans font-light mb-8 opacity-50 group-hover:opacity-100 transition-opacity">04</span>
+              <h3 class="text-2xl md:text-3xl text-white font-sans font-bold mb-4 leading-tight">Certified REALTOR®</h3>
+              <div class="h-[1px] w-12 bg-accent/30 mb-6 group-hover:w-full transition-all duration-700"></div>
+              <p class="text-textSecondary text-lg leading-relaxed">
+                Bringing a global standard of excellence and ethical practice to every transaction.
+              </p>
+            </div>
+
+            <!-- Expertise 05 -->
+            <div class="group p-8 md:p-10 border border-white/5 bg-bgSecondary/30 hover:bg-bgSecondary/60 transition-colors duration-500 border-t-accent/20 hover-trigger">
+              <span class="block text-accent text-5xl font-sans font-light mb-8 opacity-50 group-hover:opacity-100 transition-opacity">05</span>
               <h3 class="text-2xl md:text-3xl text-white font-sans font-bold mb-4 leading-tight">Specialist Real Estate Instructor</h3>
               <div class="h-[1px] w-12 bg-accent/30 mb-6 group-hover:w-full transition-all duration-700"></div>
               <p class="text-textSecondary text-lg leading-relaxed">
@@ -192,13 +278,13 @@
               </p>
             </div>
 
-            <!-- Expertise 03 -->
-            <div class="group p-8 md:p-10 border border-white/5 bg-bgSecondary/30 hover:bg-bgSecondary/60 transition-all duration-500 border-t-accent/20">
-              <span class="block text-accent text-5xl font-sans font-light mb-8 opacity-50 group-hover:opacity-100 transition-opacity">03</span>
-              <h3 class="text-2xl md:text-3xl text-white font-sans font-bold mb-4 leading-tight">Certified Facilities Management Professional</h3>
+            <!-- Expertise 06 -->
+            <div class="group p-8 md:p-10 border border-white/5 bg-bgSecondary/30 hover:bg-bgSecondary/60 transition-colors duration-500 border-t-accent/20 hover-trigger">
+              <span class="block text-accent text-5xl font-sans font-light mb-8 opacity-50 group-hover:opacity-100 transition-opacity">06</span>
+              <h3 class="text-2xl md:text-3xl text-white font-sans font-bold mb-4 leading-tight">Accredited Buyer’s Representative</h3>
               <div class="h-[1px] w-12 bg-accent/30 mb-6 group-hover:w-full transition-all duration-700"></div>
               <p class="text-textSecondary text-lg leading-relaxed">
-                Ensuring environmental harmony, safety, and operational efficiency across mega-structures.
+                Providing exclusive, high-stakes advocacy for sophisticated buyers and global investors.
               </p>
             </div>
           </div>
@@ -207,60 +293,188 @@
         <!-- Cinematic Break / Exterior -->
         <section class="relative h-[80vh] w-full overflow-hidden">
           <div class="w-full h-full hover-trigger">
-            <img src="./images/property_exterior_1773208283018.png" alt="Luxury Property Exterior" class="w-full h-full object-cover scale-[1.05] origin-center img-parallax">
+            <img src="./images/sections/top.jpg" alt="Visionary Real Estate Architecture" class="w-full h-full object-cover scale-[1.05] origin-center img-parallax">
             <div class="absolute inset-0 bg-black/30"></div>
             <div class="absolute inset-x-0 bottom-20 z-10 px-[5%] max-w-[1600px] mx-auto hidden md:block">
-              <h2 class="font-sans text-5xl md:text-6xl text-white/90">Visionary Architecture<br/><span class="text-accent/80 italic">Curated by Wilberforce.</span></h2>
+              <h2 class="font-sans text-5xl md:text-7xl lg:text-8xl text-white/90">Curating Global Standards.<br/><span class="text-accent/80 italic text-3xl md:text-4xl">One Landmark at a Time.</span></h2>
             </div>
           </div>
         </section>
 
         <!-- Credo Management Limited Section -->
-        <section id="credo" class="relative py-20 lg:py-32 px-[5%] bg-bgSecondary">
-          <div class="w-full max-w-[1600px] mx-auto flex flex-col md:flex-row justify-between items-center gap-16">
+        <section id="credo" class="relative py-20 lg:py-40 px-[5%] bg-bgSecondary border-b border-white/5 overflow-hidden">
+          <!-- Cinematic Background -->
+          <div class="absolute inset-0 z-0">
+            <img src="./images/sections/credo_bg.png" alt="" class="w-full h-full object-cover opacity-15 scale-[1.1] img-parallax" />
+            <div class="absolute inset-0 bg-gradient-to-b from-bgSecondary via-bgSecondary/40 to-bgSecondary"></div>
+          </div>
+
+          <div class="w-full max-w-[1600px] mx-auto text-center mb-20 lg:mb-32 relative z-10">
+            <h2 class="font-sans text-[12vw] leading-none hover-trigger text-white bg-clip-text">CREDO</h2>
+          </div>
+
+          <div class="w-full max-w-[1600px] mx-auto flex flex-col md:flex-row justify-between items-center gap-16 relative z-10">
             <div class="w-full md:w-1/2">
-               <p class="font-sans font-light uppercase tracking-[4px] text-accent mb-4 text-sm md:text-base">Chief Executive Officer</p>
-               <h2 class="font-sans text-5xl md:text-7xl lg:text-8xl mb-8 leading-[1]">Credo Management Limited.</h2>
-               <p class="text-textSecondary text-lg md:text-xl">
-                 As the core leadership engine, Wilberforce leverages his robust <span class="text-white">Masters Degree in Business Administration</span> to navigate complex real estate portfolios and drive Credo Management to unprecedented heights in the industry.
+               <p class="font-sans font-light uppercase tracking-[4px] text-accent mb-4 text-sm md:text-base hover-trigger">Chief Executive Officer</p>
+               <h2 class="font-sans text-4xl md:text-6xl lg:text-7xl mb-8 leading-[1.1] hover-trigger text-white">Credo Management Limited.</h2>
+               <p class="text-xl text-textSecondary leading-[1.6] hover-trigger">
+                 As the core leadership engine, I lead a mission for the real estate industry built on <span class="text-white font-medium">professionalism, transparency, and long-term thinking</span>. I am committed to building stronger systems, organisations, and professional communities through disciplined operations and strategic stewardship.
                </p>
             </div>
-            <div class="w-full md:w-1/2 border border-white/10 p-10 lg:p-16 relative bg-bgPrimary/50">
+            <div class="w-full md:w-1/2 border border-white/10 p-10 lg:p-16 relative bg-bgPrimary/60 backdrop-blur-md hover-trigger">
               <div class="absolute -top-6 -left-6 text-6xl text-accent opacity-50 font-sans">"</div>
-              <h3 class="font-sans text-2xl md:text-4xl leading-[1.4] relative z-10 italic">
-                Leadership is not merely about guiding assets; it is about cultivating trust, delivering precision, and orchestrating environments where excellence thrives.
+              <h3 class="font-sans text-2xl md:text-4xl leading-[1.4] relative z-10 italic text-white">
+                Real estate is not simply about managing buildings—it is about stewarding environments that influence how people live, work, and collaborate every day.
               </h3>
             </div>
           </div>
         </section>
 
         <!-- Property 360 Section -->
-        <section id="property360" class="relative py-20 lg:py-40 px-[5%] border-b border-white/5">
-          <div class="w-full max-w-[1600px] mx-auto text-center">
-            <p class="font-sans font-light uppercase tracking-[4px] text-textSecondary mb-4 text-sm md:text-base hover-trigger">Executive Producer & Host</p>
-            <h2 class="font-sans text-[12vw] leading-none mb-12 hover-trigger text-white bg-clip-text">PROPERTY <span class="text-accent italic">360</span></h2>
-            <h3 class="font-sans text-3xl md:text-5xl lg:text-6xl leading-[1.3] max-w-4xl mx-auto hover-trigger">
-              A premier Multi-Media Show documenting the pinnacle of global real estate.
-            </h3>
-            <p class="mt-8 text-xl text-textSecondary max-w-2xl mx-auto">
-              Through Property 360, Wilberforce brings unparalleled insights, elite developments, and market intelligence to an exclusive audience worldwide.
-            </p>
+        <section id="property360" class="relative py-20 lg:py-40 px-[5%] border-b border-white/5 overflow-hidden">
+          <!-- Cinematic Background -->
+          <div class="absolute inset-0 z-0">
+            <img src="./images/sections/property360_bg.png" alt="" class="w-full h-full object-cover opacity-20 scale-[1.1] img-parallax" />
+            <div class="absolute inset-0 bg-gradient-to-b from-bgPrimary via-transparent to-bgPrimary"></div>
+          </div>
+          
+          <div class="w-full max-w-[1600px] mx-auto relative z-10">
+            <div class="text-center mb-16 lg:mb-24">
+
+              <p class="font-sans font-light uppercase tracking-[4px] text-textSecondary mb-4 text-sm md:text-base hover-trigger">Flagship Multimedia Platform</p>
+              <div class="mb-12 hover-trigger">
+                <img src="./images/branding/property360.png" alt="Property 360 Logo" class="h-32 md:h-48 lg:h-64 w-auto object-contain mx-auto" />
+              </div>
+              <div class="flex flex-wrap justify-center gap-6 md:gap-10 text-xs md:text-sm uppercase tracking-[4px] text-accent font-bold mb-12 opacity-80">
+                <span>NBS Television Flagship</span>
+                <span class="opacity-30 hidden md:inline">|</span>
+                <span>Digital Streaming</span>
+                <span class="opacity-30 hidden md:inline">|</span>
+                <span>On-Demand Content</span>
+              </div>
+              <h3 class="font-sans text-3xl md:text-5xl lg:text-6xl leading-[1.3] max-w-5xl mx-auto hover-trigger">
+                Shaping the conversation around Real Estate excellence across Uganda and East Africa.
+              </h3>
+              <p class="mt-8 text-xl text-textSecondary max-w-3xl mx-auto">
+                As the Executive Producer and Host, I lead a multi-platform media experience designed to bridge the industry information gap, translating complex real estate concepts into accessible insights.
+              </p>
+            </div>
+
+            <!-- Ecosystem Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mt-20">
+              <div class="group border border-white/5 p-8 bg-bgSecondary/20 hover:border-accent/40 hover-trigger">
+                <span class="block text-accent text-xs font-bold tracking-[2px] mb-6 opacity-40 group-hover:opacity-100 transition-opacity">01</span>
+                <h4 class="text-xl font-bold text-white mb-4">Land & Strategy</h4>
+                <p class="text-sm text-textSecondary leading-relaxed">Expert insights into land acquisition, regulatory frameworks, and smart property decisions.</p>
+              </div>
+              <div class="group border border-white/5 p-8 bg-bgSecondary/20 hover:border-accent/40 hover-trigger">
+                <span class="block text-accent text-xs font-bold tracking-[2px] mb-6 opacity-40 group-hover:opacity-100 transition-opacity">02</span>
+                <h4 class="text-xl font-bold text-white mb-4">Design & Build</h4>
+                <p class="text-sm text-textSecondary leading-relaxed">Spotlighting the architecture, innovations, and construction technologies shaping our landscape.</p>
+              </div>
+              <div class="group border border-white/5 p-8 bg-bgSecondary/20 hover:border-accent/40 hover-trigger">
+                <span class="block text-accent text-xs font-bold tracking-[2px] mb-6 opacity-40 group-hover:opacity-100 transition-opacity">03</span>
+                <h4 class="text-xl font-bold text-white mb-4">Financing</h4>
+                <p class="text-sm text-textSecondary leading-relaxed">Navigating mortgage systems, housing finance, and wealth creation through real assets.</p>
+              </div>
+              <div class="group border border-white/5 p-8 bg-bgSecondary/20 hover:border-accent/40 hover-trigger">
+                <span class="block text-accent text-xs font-bold tracking-[2px] mb-6 opacity-40 group-hover:opacity-100 transition-opacity">04</span>
+                <h4 class="text-xl font-bold text-white mb-4">Management</h4>
+                <p class="text-sm text-textSecondary leading-relaxed">The pinnacle of facilities management and sustainable development standards.</p>
+              </div>
+              <div class="group border border-white/5 p-8 bg-bgSecondary/20 hover:border-accent/40 transition-all duration-500 hover-trigger">
+                <span class="block text-accent text-xs font-bold tracking-[2px] mb-6 opacity-40 group-hover:opacity-100 transition-opacity">05</span>
+                <h4 class="text-xl font-bold text-white mb-4">Investment</h4>
+                <p class="text-sm text-textSecondary leading-relaxed">High-level insights into investment strategy and the future of urban development.</p>
+              </div>
+            </div>
+
+            <div class="mt-20 text-center">
+              <p class="text-textSecondary italic text-lg lg:text-xl max-w-4xl mx-auto">
+                "Property 360 is not just a show; it's a hub for real estate intelligence, empowering individuals to make smarter property decisions."
+              </p>
+            </div>
           </div>
         </section>
 
         <!-- Experience & Board Section -->
-        <section id="experience" class="relative py-20 lg:py-32 px-[5%] bg-bgPrimary">
-          <div class="w-full max-w-[1600px] mx-auto flex flex-col items-center text-center">
-            <p class="font-sans font-light uppercase tracking-[2px] text-accent mb-8 text-sm md:text-base hover-trigger">Over a Decade of Excellence</p>
-            <h3 class="font-sans text-3xl md:text-5xl lg:text-6xl leading-[1.3] max-w-5xl mb-16 hover-trigger">
-              Delivering premium Real Estate Practice & Experience across Uganda, East Africa, the African continent, and Globally.
-            </h3>
-            
-            <div class="border-y border-white/10 py-12 w-full max-w-4xl mx-auto flex flex-col items-center justify-center">
-              <p class="font-sans uppercase tracking-[3px] text-sm text-textSecondary mb-4">Board Member</p>
-              <h4 class="font-sans text-3xl md:text-5xl lg:text-5xl text-white">
-                Africa Real Estate Practitioners Alliance <span class="text-accent italic">(AREPA)</span>
-              </h4>
+        <section id="experience" class="relative py-20 lg:py-40 px-[5%] bg-bgPrimary border-b border-white/5 overflow-hidden">
+          <!-- Cinematic Background -->
+          <div class="absolute inset-0 z-0">
+            <img src="./images/sections/experience_bg.png" alt="" class="w-full h-full object-cover opacity-5 scale-[1.1] img-parallax" />
+            <div class="absolute inset-0 bg-gradient-to-b from-bgPrimary via-bgPrimary/40 to-bgPrimary"></div>
+          </div>
+
+          <div class="w-full max-w-[1600px] mx-auto text-center mb-20 lg:mb-32 relative z-10">
+            <h2 class="font-sans text-[12vw] leading-none hover-trigger text-white bg-clip-text">EXPERIENCE</h2>
+          </div>
+          
+          <div class="w-full max-w-[1600px] mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row gap-16 lg:gap-32 items-start mb-32">
+              <div class="md:w-1/2">
+                <p class="font-sans font-light uppercase tracking-[2px] text-accent mb-6 text-sm md:text-base hover-trigger">Strategic Philosophy</p>
+                <h3 class="font-sans text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-8 hover-trigger text-white">The Stewardship of Environment.</h3>
+                <p class="text-xl text-textSecondary leading-[1.6] hover-trigger">
+                  Real estate is not simply about transactions—it is about stewarding environments where people, organisations, and communities can function at their best. I believe property assets perform optimally when managed through structured systems rather than reactive practices.
+                </p>
+              </div>
+              <div class="md:w-1/2 grid grid-cols-1 gap-12">
+                <div class="hover-trigger group">
+                  <h4 class="text-accent text-[10px] uppercase tracking-[3px] font-bold mb-4 opacity-70 group-hover:opacity-100 transition-opacity">Academic Foundation</h4>
+                  <p class="text-2xl md:text-3xl text-white leading-snug">
+                    Interdisciplinary background in <span class="bg-accent/10 text-accent px-2">Industrial & Organisational Psychology</span> combined with a Master of Business Administration <span class="text-accent italic">(MBA)</span>.
+                  </p>
+                  <p class="mt-4 text-textSecondary text-sm">Approaching property management and leadership from both a human and strategic perspective.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-20 border-t border-white/10">
+              <p class="font-sans font-light uppercase tracking-[4px] text-textSecondary mb-12 text-sm text-center">Board & Leadership Contributions</p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- AREPA -->
+                <div class="border border-white/5 p-8 bg-bgSecondary/60 backdrop-blur-md hover:border-accent/40 hover-trigger group">
+                  <p class="font-sans uppercase tracking-[2px] text-[10px] text-accent font-bold mb-4">Board Member</p>
+                  <h5 class="text-xl md:text-2xl font-bold text-white mb-2">AREPA</h5>
+                  <p class="text-sm text-textSecondary">Africa Real Estate Practitioners Alliance — Shaping continental standards.</p>
+                </div>
+
+                <!-- BNI Uganda -->
+                <div class="border border-white/5 p-8 bg-bgSecondary/60 backdrop-blur-md hover:border-accent/40 hover-trigger group">
+                  <p class="font-sans uppercase tracking-[2px] text-[10px] text-accent font-bold mb-4">Director Consultant</p>
+                  <h5 class="text-xl md:text-2xl font-bold text-white mb-2">BNI Uganda</h5>
+                  <p class="text-sm text-textSecondary">Supporting business leaders in building sustainable enterprises through structured collaboration.</p>
+                </div>
+
+                <!-- Kaal Capital -->
+                <div class="border border-white/5 p-8 bg-bgSecondary/60 backdrop-blur-md hover:border-accent/40 hover-trigger group">
+                  <p class="font-sans uppercase tracking-[2px] text-[10px] text-accent font-bold mb-4">Board Member</p>
+                  <h5 class="text-xl md:text-2xl font-bold text-white mb-2">Kaal Capital</h5>
+                  <p class="text-sm text-textSecondary">Participating in governance initiatives that support organisational growth and leadership.</p>
+                </div>
+
+                <!-- HR Fun House -->
+                <div class="border border-white/5 p-8 bg-bgSecondary/60 backdrop-blur-md hover:border-accent/40 hover-trigger group">
+                  <p class="font-sans uppercase tracking-[2px] text-[10px] text-accent font-bold mb-4">Board Member</p>
+                  <h5 class="text-xl md:text-2xl font-bold text-white mb-2">Human Resource Fun House</h5>
+                  <p class="text-sm text-textSecondary">Driving leadership development and professional advancement.</p>
+                </div>
+
+                <!-- BNI Victorious -->
+                <div class="border border-white/5 p-8 bg-bgSecondary/60 backdrop-blur-md hover:border-accent/40 hover-trigger group">
+                  <p class="font-sans uppercase tracking-[2px] text-[10px] text-accent font-bold mb-4">Founder President</p>
+                  <h5 class="text-xl md:text-2xl font-bold text-white mb-2">BNI Victorious Chapter</h5>
+                  <p class="text-sm text-textSecondary">Building a professional community centred on trust, accountability, and mutual growth.</p>
+                </div>
+
+                <!-- Strategic Alliances -->
+                <div class="border border-white/5 p-8 bg-bgSecondary/60 backdrop-blur-md hover:border-accent/40 hover-trigger group">
+                  <p class="font-sans uppercase tracking-[2px] text-[10px] text-accent font-bold mb-4">Expertise Region</p>
+                  <h5 class="text-xl md:text-2xl font-bold text-white mb-2">Global & Continental</h5>
+                  <p class="text-sm text-textSecondary">Active practice across Uganda, East Africa, and international real estate markets.</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -268,9 +482,9 @@
         <!-- Cinematic Break / Interior -->
         <section class="relative h-screen w-full overflow-hidden">
           <div class="w-full h-full hover-trigger">
-            <img src="./images/property_interior_1773208300040.png" alt="Luxury Property Interior" class="w-full h-full object-cover scale-[1.05] origin-center img-parallax">
+            <img src="./images/sections/last.jpg" alt="Excellence in Real Estate" class="w-full h-full object-cover scale-[1.05] origin-center img-parallax">
             <div class="absolute bottom-32 left-[5%] z-10">
-              <h2 class="font-sans text-5xl md:text-7xl lg:text-8xl drop-shadow-[2px_2px_10px_rgba(0,0,0,0.8)]">Elevating Standard.</h2>
+              <h2 class="font-sans text-5xl md:text-7xl lg:text-8xl drop-shadow-[2px_2px_10px_rgba(0,0,0,0.8)]">Legacy of Excellence.</h2>
             </div>
           </div>
         </section>
@@ -285,9 +499,9 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                 info@wilberforcensamba.com
               </a>
-              <a href="tel:+256000000000" class="text-xl md:text-2xl text-textPrimary hover:text-accent transition-colors hover-trigger flex items-center gap-4">
+              <a href="tel:+256775824768" class="text-xl md:text-2xl text-textPrimary hover:text-accent transition-colors hover-trigger flex items-center gap-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                +256 (0) 000 000 000
+                +256 775 824 768
               </a>
               
               <div class="flex gap-6 mt-8">

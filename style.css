@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'Bricolage Grotesque';
-  src: url('/fonts/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf') format('truetype');
+  src: url('./BRICO/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf') format('truetype');
   font-weight: 100 900;
   font-display: swap;
   font-style: normal;
@@ -51,4 +51,72 @@ button,
 
 #app-content {
   opacity: 0;
+}
+
+/* Professional Designation Badges */
+.badge-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px; /* More professional, less pill-like for longer text */
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  cursor: pointer;
+}
+
+.badge-item:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: rgba(212, 175, 55, 0.4);
+  transform: translateX(5px); /* Lift to the right instead of up */
+}
+
+.badge-abbr {
+  font-size: 8px;
+  font-weight: 700;
+  color: #f2f2f2;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .badge-abbr {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+}
+
+.badge-item:hover .badge-abbr {
+  color: #d4af37; /* accent on hover */
+}
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cinematic-reveal {
+  overflow: hidden;
+}
+
+.cinematic-reveal > * {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+#hero-portrait {
+  /* Removed transition: all to prevent GSAP conflicts */
+  /* Use mask-image for a perfect fade that blends with any background */
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 25%);
+  mask-image: linear-gradient(to top, transparent 0%, black 25%);
+}
+
+@media (min-width: 1024px) {
+  #hero-portrait {
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, black 15%);
+    mask-image: linear-gradient(to top, transparent 0%, black 15%);
+  }
 }
