@@ -39,6 +39,20 @@
   </head>
   <body class="bg-bgPrimary text-textPrimary font-sans min-h-screen overflow-x-hidden antialiased md:cursor-none">
     
+    <!-- Cinematic Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[100] bg-bgPrimary flex flex-col items-center justify-center pointer-events-auto">
+      <div class="relative overflow-hidden mb-8">
+        <img src="./images/branding/logo.png" alt="Wilberforce Nsamba" class="h-20 md:h-28 w-auto object-contain opacity-0 scale-90" id="preloader-logo" />
+      </div>
+      <div class="w-48 h-[1px] bg-white/10 relative overflow-hidden">
+        <div id="preloader-bar" class="absolute top-0 left-0 h-full bg-accent w-0"></div>
+      </div>
+      <div class="mt-4 font-sans text-[10px] uppercase tracking-[4px] text-accent/60 flex items-center gap-2">
+        <span>Loading</span>
+        <span id="preloader-percent">0</span><span>%</span>
+      </div>
+    </div>
+
     <!-- Custom Magnetic Cursor -->
     <div class="custom-cursor" id="custom-cursor"></div>
 
@@ -49,16 +63,78 @@
         <div class="absolute inset-0 bg-gradient-to-b from-bgPrimary via-bgPrimary/40 to-bgPrimary/60"></div>
       </div>
 
-    <!-- Fixed Navigation -->
+    <!-- Fixed Navigation & Signature Logo -->
     <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-[5%] py-4 md:py-6 pointer-events-auto bg-bgPrimary border-b border-white/10">
+      <!-- Custom Logo -->
       <a href="./index.html" class="relative group hover-trigger block">
-        <img src="./images/branding/logo.png" alt="Wilberforce Nsamba Logo" class="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+              <img src="./images/branding/logo.png" alt="Wilberforce Nsamba Logo" class="h-14 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
       </a>
       
-      <a href="./index.html" class="text-white uppercase tracking-[3px] font-sans text-xs hover-trigger group flex items-center gap-3 border border-white/20 rounded-full px-5 py-2.5 hover:bg-white hover:text-black transition-colors duration-300">
-        <span class="group-hover:text-black">Back to Home</span>
-      </a>
+      <div class="flex items-center gap-6 md:gap-8">
+        <!-- Desktop Menu Links -->
+        <div class="hidden lg:flex items-center gap-8 font-sans uppercase tracking-[2px] text-xs font-semibold">
+          <a href="./index.html#about" class="text-textSecondary hover:text-white transition-colors hover-trigger menu-link-desktop">About</a>
+          <a href="./index.html#credo" class="text-textSecondary hover:text-white transition-colors hover-trigger menu-link-desktop">Credo</a>
+          <a href="./index.html#property360" class="text-textSecondary hover:text-white transition-colors hover-trigger menu-link-desktop">Property 360</a>
+          <a href="./index.html#experience" class="text-textSecondary hover:text-white transition-colors hover-trigger menu-link-desktop">Experience</a>
+          <a href="./index.html#contact" class="text-textSecondary hover:text-white transition-colors hover-trigger menu-link-desktop">Contact</a>
+        </div>
+
+        <!-- Social Icons (Navbar) -->
+        <div class="flex items-center gap-4 text-textSecondary border-l border-white/20 pl-6 md:pl-8">
+          <a href="https://www.linkedin.com/in/wilberforce-nsamba-881a99359/?originalSubdomain=ug" target="_blank" rel="noopener noreferrer" class="hover:text-accent hover-trigger transition-colors" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://www.facebook.com/wilburnsamba/" target="_blank" rel="noopener noreferrer" class="hover:text-accent hover-trigger transition-colors" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/wilberforcensamba/" target="_blank" rel="noopener noreferrer" class="hover:text-accent hover-trigger transition-colors" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <a href="https://x.com/WNsamba" target="_blank" rel="noopener noreferrer" class="hover:text-accent hover-trigger transition-colors" aria-label="Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@nsamba.wilberforc" target="_blank" rel="noopener noreferrer" class="hover:text-accent hover-trigger transition-colors" aria-label="TikTok">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="lg:hidden text-white uppercase tracking-[3px] font-sans text-xs hover-trigger group flex items-center gap-3 border border-white/20 rounded-full px-5 py-2.5 hover:bg-white hover:text-black transition-colors duration-300">
+          <span class="group-hover:text-black">Menu</span>
+        </button>
+      </div>
     </nav>
+
+    <!-- Full Screen Menu Overlay -->
+    <div id="fs-menu" class="fixed inset-0 bg-bgPrimary z-40 flex flex-col justify-center px-[10%] pointer-events-none">
+      <!-- Decorator line -->
+      <div class="absolute left-[10%] top-0 w-px h-full bg-white/5"></div>
+      
+      <div class="relative z-10 flex flex-col gap-6 md:gap-10">
+        <div class="overflow-hidden">
+          <a href="./index.html#about" class="menu-link block font-sans text-[12vw] md:text-[8vw] leading-none uppercase hover:text-accent transition-colors hover-trigger">About</a>
+        </div>
+        <div class="overflow-hidden">
+          <a href="./index.html#credo" class="menu-link block font-sans text-[12vw] md:text-[8vw] leading-none uppercase hover:text-accent transition-colors hover-trigger">Credo</a>
+        </div>
+        <div class="overflow-hidden">
+          <a href="./index.html#property360" class="menu-link block font-sans text-[12vw] md:text-[8vw] leading-none uppercase hover:text-accent transition-colors hover-trigger">Property 360</a>
+        </div>
+        <div class="overflow-hidden">
+          <a href="./index.html#experience" class="menu-link block font-sans text-[12vw] md:text-[8vw] leading-none uppercase hover:text-accent transition-colors hover-trigger">Experience</a>
+        </div>
+        <div class="overflow-hidden">
+          <a href="./index.html#contact" class="menu-link block font-sans text-[12vw] md:text-[8vw] leading-none uppercase hover:text-accent transition-colors hover-trigger">Contact</a>
+        </div>
+      </div>
+
+      <!-- Professional Stamp / Detail in Menu -->
+      <div class="absolute bottom-12 left-[10%] right-[10%] flex justify-between items-end border-t border-white/10 pt-8 opacity-40">
+        <div class="font-sans text-[10px] uppercase tracking-[4px]">Wilberforce Nsamba &copy; 2026</div>
+        <div class="hidden md:block font-sans text-[10px] uppercase tracking-[4px]">Global Real Estate Visionary</div>
+      </div>
+    </div>
 
     <main class="pt-32 pb-20 px-[5%]">
       <div class="w-full max-w-6xl mx-auto">
@@ -159,9 +235,54 @@
       </div>
     </main>
 
-    <!-- Simple Footer -->
-    <footer class="py-10 border-t border-white/10 px-[5%] text-center">
-      <p class="text-[10px] uppercase tracking-[4px] text-textSecondary">&copy; 2026 Wilberforce Nsamba. All Rights Reserved.</p>
+    <!-- Footer -->
+    <footer id="contact" class="relative py-20 text-center px-[5%]">
+      <div class="w-full max-w-[1600px] mx-auto">
+        <h2 class="font-sans text-4xl md:text-6xl lg:text-7xl">Get In Touch</h2>
+        
+        <div class="mt-16 flex flex-col items-center justify-center gap-6">
+          <a href="mailto:info@wilberforcensamba.com" class="text-xl md:text-2xl text-textPrimary hover:text-accent transition-colors hover-trigger flex items-center gap-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            info@wilberforcensamba.com
+          </a>
+          <a href="tel:+256775824768" class="text-xl md:text-2xl text-textPrimary hover:text-accent transition-colors hover-trigger flex items-center gap-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +256 775 824 768
+          </a>
+          
+          <div class="flex gap-6 mt-8">
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/wilberforce-nsamba-881a99359/?originalSubdomain=ug" target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center hover:border-accent hover:text-accent hover:bg-white/5 transition-all outline-none hover-trigger">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              <span class="sr-only">LinkedIn</span>
+            </a>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/wilburnsamba/" target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center hover:border-accent hover:text-accent hover:bg-white/5 transition-all outline-none hover-trigger">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              <span class="sr-only">Facebook</span>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/wilberforcensamba/" target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center hover:border-accent hover:text-accent hover:bg-white/5 transition-all outline-none hover-trigger">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+              <span class="sr-only">Instagram</span>
+            </a>
+            <!-- Twitter -->
+            <a href="https://x.com/WNsamba" target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center hover:border-accent hover:text-accent hover:bg-white/5 transition-all outline-none hover-trigger">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+              <span class="sr-only">Twitter</span>
+            </a>
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@nsamba.wilberforc" target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center hover:border-accent hover:text-accent hover:bg-white/5 transition-all outline-none hover-trigger">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+              <span class="sr-only">TikTok</span>
+            </a>
+          </div>
+        </div>
+        
+        <div class="mt-24 flex flex-col items-center justify-center text-textSecondary text-sm border-t border-white/10 pt-8">
+          <span>&copy; 2026 Wilberforce Nsamba.</span>
+        </div>
+      </div>
     </footer>
 
     </div><!-- End app-content -->
