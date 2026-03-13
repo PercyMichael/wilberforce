@@ -254,4 +254,49 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // 6. Booking Form Integration (EmailJS)
+  const bookingForm = document.getElementById('booking-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const btnText = document.getElementById('btn-text');
+  const btnLoader = document.getElementById('btn-loader');
+  const formStatus = document.getElementById('form-status');
+
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Show loading state
+      submitBtn.disabled = true;
+      btnText.textContent = "Sending...";
+      btnLoader.classList.remove('hidden');
+      formStatus.classList.add('hidden');
+
+      // EmailJS sendForm
+      // Replace these strings with your actual IDs from the EmailJS dashboard
+      const SERVICE_ID = 'service_i1i662q'; 
+      const TEMPLATE_ID = 'template_juk8vix';
+
+      emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, bookingForm)
+        .then(() => {
+          // Success
+          formStatus.textContent = "Booking Request Sent Successfully!";
+          formStatus.classList.remove('hidden');
+          formStatus.className = "md:col-span-2 p-4 text-center font-sans text-xs uppercase tracking-[2px] bg-green-500/20 text-green-500";
+          bookingForm.reset();
+        }, (error) => {
+          // Error
+          console.error('EmailJS Error:', error);
+          formStatus.textContent = "Oops! Something went wrong. Please try again.";
+          formStatus.classList.remove('hidden');
+          formStatus.className = "md:col-span-2 p-4 text-center font-sans text-xs uppercase tracking-[2px] bg-red-500/20 text-red-500";
+        })
+        .finally(() => {
+          // Reset button state
+          submitBtn.disabled = false;
+          btnText.textContent = "Confirm Booking Request";
+          btnLoader.classList.add('hidden');
+        });
+    });
+  }
 });

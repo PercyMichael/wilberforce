@@ -27,6 +27,15 @@
     </script>
     <!-- Custom Styles -->
     <link rel="stylesheet" href="./style.css" />
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+      (function() {
+        emailjs.init({
+          publicKey: "JEdq7OZT0flxRjxfD",
+        });
+      })();
+    </script>
   </head>
   <body class="bg-bgPrimary text-textPrimary font-sans min-h-screen overflow-x-hidden antialiased md:cursor-none">
     
@@ -97,20 +106,20 @@
           <div class="lg:col-span-2 order-1 lg:order-2 bg-bgSecondary/30 border border-white/10 p-8 md:p-12 relative overflow-hidden group">
             <div class="absolute top-0 left-0 w-1 h-full bg-accent/20 group-hover:bg-accent transition-colors duration-700"></div>
             
-            <form class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+            <form id="booking-form" class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
               <div class="flex flex-col gap-2">
                 <label class="text-[10px] uppercase tracking-[2px] text-accent font-bold">Full Name</label>
-                <input type="text" placeholder="John Doe" class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white placeholder-white/20 hover-trigger" required />
+                <input type="text" name="user_name" placeholder="John Doe" class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white placeholder-white/20 hover-trigger" required />
               </div>
               
               <div class="flex flex-col gap-2">
                 <label class="text-[10px] uppercase tracking-[2px] text-accent font-bold">Email Address</label>
-                <input type="email" placeholder="john@example.com" class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white placeholder-white/20 hover-trigger" required />
+                <input type="email" name="user_email" placeholder="john@example.com" class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white placeholder-white/20 hover-trigger" required />
               </div>
 
               <div class="flex flex-col gap-2 md:col-span-2">
                 <label class="text-[10px] uppercase tracking-[2px] text-accent font-bold">Service Required</label>
-                <select class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white/50 hover-trigger appearance-none" required>
+                <select name="service" class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white/50 hover-trigger appearance-none" required>
                   <option value="" disabled selected>Select a Service</option>
                   <option value="consultation">Consultation</option>
                   <option value="site-visit">Site Visit</option>
@@ -122,24 +131,28 @@
 
               <div class="flex flex-col gap-2">
                 <label class="text-[10px] uppercase tracking-[2px] text-accent font-bold">Preferred Date</label>
-                <input type="date" class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white placeholder-white/20 hover-trigger" required />
+                <input type="date" name="preferred_date" class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white placeholder-white/20 hover-trigger" required />
               </div>
 
               <div class="flex flex-col gap-2">
                 <label class="text-[10px] uppercase tracking-[2px] text-accent font-bold">Company / Organization</label>
-                <input type="text" placeholder="Optional" class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white placeholder-white/20 hover-trigger" />
+                <input type="text" name="organization" placeholder="Optional" class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white placeholder-white/20 hover-trigger" />
               </div>
 
               <div class="flex flex-col gap-2 md:col-span-2">
                 <label class="text-[10px] uppercase tracking-[2px] text-accent font-bold">Your Vision / Message</label>
-                <textarea rows="4" placeholder="How can I help you navigate the global real estate landscape?" class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white placeholder-white/20 hover-trigger" required></textarea>
+                <textarea name="message" rows="4" placeholder="How can I help you navigate the global real estate landscape?" class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white placeholder-white/20 hover-trigger" required></textarea>
               </div>
 
               <div class="md:col-span-2 pt-4">
-                <button type="submit" class="w-full py-5 bg-accent text-black font-sans uppercase tracking-[3px] text-xs font-bold hover:bg-white transition-colors duration-500 hover-trigger">
-                  Confirm Booking Request
+                <button type="submit" id="submit-btn" class="w-full py-5 bg-accent text-black font-sans uppercase tracking-[3px] text-xs font-bold hover:bg-white transition-colors duration-500 hover-trigger flex items-center justify-center gap-3">
+                  <span id="btn-text">Confirm Booking Request</span>
+                  <div id="btn-loader" class="hidden w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
                 </button>
               </div>
+
+              <!-- Status Messages -->
+              <div id="form-status" class="md:col-span-2 hidden p-4 text-center font-sans text-xs uppercase tracking-[2px]"></div>
             </form>
           </div>
         </div>
