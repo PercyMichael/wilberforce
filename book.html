@@ -46,65 +46,96 @@
     </nav>
 
     <main class="pt-32 pb-20 px-[5%]">
-      <div class="w-full max-w-4xl mx-auto">
-        <div class="mb-12 text-center">
+      <div class="w-full max-w-6xl mx-auto">
+        <div class="mb-12 text-center md:text-left">
           <p class="font-sans font-light uppercase tracking-[4px] text-accent mb-4 text-sm md:text-base">Elite Consultation</p>
           <h1 class="font-sans text-5xl md:text-7xl lg:text-8xl mb-6 leading-[1]">Book My Vision.</h1>
-          <p class="text-textSecondary text-lg md:text-xl max-w-2xl mx-auto">
-            Secure your session for global real estate strategy, property management excellence, or investment advisory.
-          </p>
         </div>
 
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 md:gap-20">
+          <!-- Contact Info Sidebar -->
+          <div class="lg:col-span-1 order-2 lg:order-1">
+            <div class="space-y-12">
+              <div>
+                <h3 class="text-[10px] uppercase tracking-[3px] text-accent font-bold mb-6">Direct Contact</h3>
+                <div class="space-y-4">
+                  <a href="mailto:info@wilberforcensamba.com" class="block text-lg text-textPrimary hover:text-accent transition-colors hover-trigger">info@wilberforcensamba.com</a>
+                  <a href="tel:+256775824768" class="block text-lg text-textPrimary hover:text-accent transition-colors hover-trigger">+256 775 824 768</a>
+                </div>
+              </div>
 
-
-        <!-- Glassmorphic Booking Form -->
-        <div class="bg-bgSecondary/30 border border-white/10 p-8 md:p-12 relative overflow-hidden group">
-          <div class="absolute top-0 left-0 w-1 h-full bg-accent/20 group-hover:bg-accent transition-colors duration-700"></div>
-          
-          <form class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
-            <div class="flex flex-col gap-2">
-              <label class="text-[10px] uppercase tracking-[2px] text-accent font-bold">Full Name</label>
-              <input type="text" placeholder="John Doe" class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white placeholder-white/20 hover-trigger" required />
+              <div>
+                <h3 class="text-[10px] uppercase tracking-[3px] text-accent font-bold mb-6">Follow the Journey</h3>
+                <div class="flex flex-wrap gap-4">
+                  <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:border-accent hover:text-accent hover:bg-white/5 transition-all outline-none hover-trigger" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                  </a>
+                  <a href="https://x.com/WNsamba" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:border-accent hover:text-accent hover:bg-white/5 transition-all outline-none hover-trigger" aria-label="Twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+                  </a>
+                  <a href="https://www.tiktok.com/@nsamba.wilberforc" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:border-accent hover:text-accent hover:bg-white/5 transition-all outline-none hover-trigger" aria-label="TikTok">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+                  </a>
+                  <a href="https://www.facebook.com/wilburnsamba/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:border-accent hover:text-accent hover:bg-white/5 transition-all outline-none hover-trigger" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                  </a>
+                  <a href="https://www.instagram.com/wilberforcensamba/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:border-accent hover:text-accent hover:bg-white/5 transition-all outline-none hover-trigger" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                  </a>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <!-- Glassmorphic Booking Form -->
+          <div class="lg:col-span-2 order-1 lg:order-2 bg-bgSecondary/30 border border-white/10 p-8 md:p-12 relative overflow-hidden group">
+            <div class="absolute top-0 left-0 w-1 h-full bg-accent/20 group-hover:bg-accent transition-colors duration-700"></div>
             
-            <div class="flex flex-col gap-2">
-              <label class="text-[10px] uppercase tracking-[2px] text-accent font-bold">Email Address</label>
-              <input type="email" placeholder="john@example.com" class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white placeholder-white/20 hover-trigger" required />
-            </div>
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+              <div class="flex flex-col gap-2">
+                <label class="text-[10px] uppercase tracking-[2px] text-accent font-bold">Full Name</label>
+                <input type="text" placeholder="John Doe" class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white placeholder-white/20 hover-trigger" required />
+              </div>
+              
+              <div class="flex flex-col gap-2">
+                <label class="text-[10px] uppercase tracking-[2px] text-accent font-bold">Email Address</label>
+                <input type="email" placeholder="john@example.com" class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white placeholder-white/20 hover-trigger" required />
+              </div>
 
-            <div class="flex flex-col gap-2 md:col-span-2">
-              <label class="text-[10px] uppercase tracking-[2px] text-accent font-bold">Service Required</label>
-              <select class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white/50 hover-trigger appearance-none" required>
-                <option value="" disabled selected>Select a Service</option>
-                <option value="consultation">Consultation</option>
-                <option value="site-visit">Site Visit</option>
-                <option value="advisory">Advisory</option>
-                <option value="key-note">Key Note</option>
-                <option value="property-marketing">Property Marketing</option>
-              </select>
-            </div>
+              <div class="flex flex-col gap-2 md:col-span-2">
+                <label class="text-[10px] uppercase tracking-[2px] text-accent font-bold">Service Required</label>
+                <select class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white/50 hover-trigger appearance-none" required>
+                  <option value="" disabled selected>Select a Service</option>
+                  <option value="consultation">Consultation</option>
+                  <option value="site-visit">Site Visit</option>
+                  <option value="advisory">Advisory</option>
+                  <option value="key-note">Key Note</option>
+                  <option value="property-marketing">Property Marketing</option>
+                </select>
+              </div>
 
-            <div class="flex flex-col gap-2">
-              <label class="text-[10px] uppercase tracking-[2px] text-accent font-bold">Preferred Date</label>
-              <input type="date" class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white placeholder-white/20 hover-trigger" required />
-            </div>
+              <div class="flex flex-col gap-2">
+                <label class="text-[10px] uppercase tracking-[2px] text-accent font-bold">Preferred Date</label>
+                <input type="date" class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white placeholder-white/20 hover-trigger" required />
+              </div>
 
-            <div class="flex flex-col gap-2">
-              <label class="text-[10px] uppercase tracking-[2px] text-accent font-bold">Company / Organization</label>
-              <input type="text" placeholder="Optional" class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white placeholder-white/20 hover-trigger" />
-            </div>
+              <div class="flex flex-col gap-2">
+                <label class="text-[10px] uppercase tracking-[2px] text-accent font-bold">Company / Organization</label>
+                <input type="text" placeholder="Optional" class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white placeholder-white/20 hover-trigger" />
+              </div>
 
-            <div class="flex flex-col gap-2 md:col-span-2">
-              <label class="text-[10px] uppercase tracking-[2px] text-accent font-bold">Your Vision / Message</label>
-              <textarea rows="4" placeholder="How can I help you navigate the global real estate landscape?" class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white placeholder-white/20 hover-trigger" required></textarea>
-            </div>
+              <div class="flex flex-col gap-2 md:col-span-2">
+                <label class="text-[10px] uppercase tracking-[2px] text-accent font-bold">Your Vision / Message</label>
+                <textarea rows="4" placeholder="How can I help you navigate the global real estate landscape?" class="bg-white/5 border border-white/10 px-4 py-4 focus:border-accent focus:outline-none transition-colors text-white placeholder-white/20 hover-trigger" required></textarea>
+              </div>
 
-            <div class="md:col-span-2 pt-4">
-              <button type="submit" class="w-full py-5 bg-accent text-black font-sans uppercase tracking-[3px] text-xs font-bold hover:bg-white transition-colors duration-500 hover-trigger">
-                Confirm Booking Request
-              </button>
-            </div>
-          </form>
+              <div class="md:col-span-2 pt-4">
+                <button type="submit" class="w-full py-5 bg-accent text-black font-sans uppercase tracking-[3px] text-xs font-bold hover:bg-white transition-colors duration-500 hover-trigger">
+                  Confirm Booking Request
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </main>
